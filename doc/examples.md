@@ -4,7 +4,7 @@ Here you can find a bunch of simple examples for using ct, with some explanation
 
 ## Users and groups
 
-```yaml container-linux-config
+```yaml
 passwd:
   users:
     - name: core
@@ -15,7 +15,7 @@ passwd:
 
 This example modifies the existing `core` user, giving it a known password hash (this will enable login via password), and setting its ssh key.
 
-```yaml container-linux-config
+```yaml
 passwd:
   users:
     - name: user1
@@ -30,7 +30,7 @@ passwd:
 
 This example will create two users, `user1` and `user2`. The first user has a password set and two ssh public keys authorized to log in as the user. The second user doesn't have a password set (so log in via password will be disabled), but have one ssh key.
 
-```yaml container-linux-config
+```yaml
 passwd:
   users:
     - name: user1
@@ -71,7 +71,7 @@ Using a higher number of rounds will help create more secure passwords, but give
 
 ### Files
 
-```yaml container-linux-config
+```yaml
 storage:
   files:
     - path: /opt/file1
@@ -87,7 +87,7 @@ storage:
 
 This example creates a file at `/opt/file` with the contents `Hello, world!`, permissions 0644 (so readable and writable by the owner, and only readable by everyone else), and the file is owned by user uid 500 and gid 501.
 
-```yaml container-linux-config
+```yaml
 storage:
   files:
     - path: /opt/file2
@@ -107,7 +107,7 @@ This example fetches a gzip-compressed file from `http://example.com/file2`, mak
 
 ### Filesystems
 
-```yaml container-linux-config
+```yaml
 storage:
   filesystems:
     - name: filesystem1
@@ -122,7 +122,7 @@ This example formats the root filesystem to be `btrfs`, and names it `filesystem
 
 ## systemd units
 
-```yaml container-linux-config
+```yaml
 systemd:
   units:
     - name: etcd-member.service
@@ -135,7 +135,7 @@ systemd:
 
 This example adds a drop-in for the `etcd-member` unit, setting the name for etcd to `infra0` with an environment variable. More information on systemd dropins can be found in [the docs][dropins].
 
-```yaml container-linux-config
+```yaml
 systemd:
   units:
     - name: hello.service
@@ -156,7 +156,7 @@ This example creates a new systemd unit called hello.service, enables it so it w
 
 ## networkd units
 
-```yaml container-linux-config
+```yaml
 networkd:
   units:
     - name: static.network
@@ -173,7 +173,7 @@ This example creates a networkd unit to set the IP address on the `enp2s0` inter
 
 ## etcd
 
-```yaml container-linux-config:norender
+```yaml
 etcd:
   version:                     "3.0.15"
   name:                        "{HOSTNAME}"
@@ -190,7 +190,7 @@ This is referencing dynamic data that isn't known until an instance is booted. F
 
 ## Updates and Locksmithd
 
-```yaml container-linux-config
+```yaml
 update:
   group:  "beta"
 locksmith:
