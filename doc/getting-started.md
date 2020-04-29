@@ -2,7 +2,9 @@
 
 ct is a tool that will consume a Container Linux Config and produce a JSON file that can be given to a Container Linux machine when it first boots to set the machine up. Using this config, a machine can be told to create users, format the root filesystem, set up the network, install systemd units, and more.
 
-Container Linux Configs are YAML files conforming to ct's schema. For more information on the schema, take a look at [doc/configuration.md][1].
+Container Linux Configs are YAML files conforming to ct's schema. For more information on the schema, take a look at [configuration][1].
+
+ct can be downloaded form its [GitHub Releases page][4] or used via Docker (`cat example.yaml | docker run --rm -i quay.io/coreos/ct:latest-dev --platform=YOURPLATFORM`).
 
 As a simple example, let's use ct to set the authorized ssh key for the core user on a Container Linux machine.
 
@@ -32,3 +34,4 @@ To see some examples for what else ct can do, head over to the [examples][3].
 [1]: configuration.md
 [2]: https://coreos.com/ignition/docs/latest/supported-platforms.html
 [3]: examples.md
+[4]: https://github.com/coreos/container-linux-config-transpiler/releases
