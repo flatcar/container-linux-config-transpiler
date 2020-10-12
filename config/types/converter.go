@@ -17,11 +17,12 @@ package types
 import (
 	"reflect"
 
-	"github.com/coreos/container-linux-config-transpiler/config/astyaml"
 	ignTypes "github.com/coreos/ignition/config/v2_3/types"
 	"github.com/coreos/ignition/config/validate"
 	"github.com/coreos/ignition/config/validate/astnode"
 	"github.com/coreos/ignition/config/validate/report"
+
+	"github.com/flatcar-linux/container-linux-config-transpiler/config/astyaml"
 )
 
 type converter func(in Config, ast astnode.AstNode, out ignTypes.Config, platform string) (ignTypes.Config, report.Report, astnode.AstNode)

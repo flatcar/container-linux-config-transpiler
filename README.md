@@ -54,7 +54,7 @@ ARCH=x86_64
 OS=unknown-linux-gnu # Linux
 
 # Specify download URL
-DOWNLOAD_URL=https://github.com/coreos/container-linux-config-transpiler/releases/download
+DOWNLOAD_URL=https://github.com/flatcar-linux/container-linux-config-transpiler/releases/download
 
 # Remove previous downloads
 rm -f /tmp/ct-${CT_VER}-${ARCH}-${OS} /tmp/ct-${CT_VER}-${ARCH}-${OS}.asc /tmp/coreos-app-signing-pubkey.gpg
@@ -72,14 +72,14 @@ curl -L ${DOWNLOAD_URL}/${CT_VER}/ct-${CT_VER}-${ARCH}-${OS}.asc -o /tmp/ct-${CT
 gpg2 --verify /tmp/ct-${CT_VER}-${ARCH}-${OS}.asc /tmp/ct-${CT_VER}-${ARCH}-${OS}
 ```
 
-[releases]: https://github.com/coreos/container-linux-config-transpiler/releases
+[releases]: https://github.com/flatcar-linux/container-linux-config-transpiler/releases
 
 ### Building from source
 
 To build from source you'll need to have the go compiler installed on your system.
 
 ```shell
-git clone --branch v0.8.0 https://github.com/coreos/container-linux-config-transpiler
+git clone --branch v0.8.0 https://github.com/flatcar-linux/container-linux-config-transpiler
 cd container-linux-config-transpiler
 make
 ```
