@@ -8,7 +8,7 @@ require (
 	github.com/alecthomas/units v0.0.0-20150109002421-6b4e7dc5e314
 	github.com/coreos/go-semver v0.2.1-0.20170209201757-5e3acbb5668c
 	github.com/coreos/go-systemd v0.0.0-20180202092358-40e2722dffea // indirect
-	github.com/coreos/ignition v0.24.0
+	github.com/coreos/ignition v0.35.0
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
