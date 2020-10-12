@@ -13,11 +13,11 @@ github.com/coreos/go-semver/semver
 # github.com/coreos/go-systemd v0.0.0-20180202092358-40e2722dffea
 ## explicit
 github.com/coreos/go-systemd/unit
-# github.com/coreos/ignition v0.24.0
+# github.com/coreos/ignition v0.35.0
 ## explicit
 github.com/coreos/ignition/config/shared/errors
 github.com/coreos/ignition/config/shared/validations
-github.com/coreos/ignition/config/v2_2/types
+github.com/coreos/ignition/config/v2_3/types
 github.com/coreos/ignition/config/validate
 github.com/coreos/ignition/config/validate/astjson
 github.com/coreos/ignition/config/validate/astnode
