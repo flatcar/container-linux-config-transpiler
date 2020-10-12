@@ -20,13 +20,13 @@ import (
 	"reflect"
 
 	ignTypes "github.com/coreos/ignition/config/v2_3/types"
+	"github.com/coreos/ignition/config/validate/astnode"
 	"github.com/coreos/ignition/config/validate/report"
 
-	"github.com/coreos/container-linux-config-transpiler/config/platform"
-	"github.com/coreos/container-linux-config-transpiler/config/templating"
-	"github.com/coreos/container-linux-config-transpiler/config/types/util"
-	iutil "github.com/coreos/container-linux-config-transpiler/internal/util"
-	"github.com/coreos/ignition/config/validate/astnode"
+	"github.com/flatcar-linux/container-linux-config-transpiler/config/platform"
+	"github.com/flatcar-linux/container-linux-config-transpiler/config/templating"
+	"github.com/flatcar-linux/container-linux-config-transpiler/config/types/util"
+	iutil "github.com/flatcar-linux/container-linux-config-transpiler/internal/util"
 )
 
 var (

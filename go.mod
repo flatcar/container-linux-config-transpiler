@@ -1,4 +1,4 @@
-module github.com/coreos/container-linux-config-transpiler
+module github.com/flatcar-linux/container-linux-config-transpiler
 
 go 1.15
 

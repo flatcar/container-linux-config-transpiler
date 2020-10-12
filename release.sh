@@ -12,7 +12,7 @@ VER=$1
 }
 
 if test -n "$(git ls-files --others | \
-	grep --invert-match '\(gopath/src/github.com/coreos/container-linux-config-transpiler\|bin/ct\)')";
+	grep --invert-match '\(gopath/src/github.com/flatcar-linux/container-linux-config-transpiler\|bin/ct\)')";
 then
 	echo "directory has untracked files"
 	exit 1
