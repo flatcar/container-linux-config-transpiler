@@ -15,15 +15,10 @@ LD_FLAGS="-w -X $(REPO)/internal/version.Raw=$(VERSION)"
 
 GO_SOURCES=$(shell find . -name "*.go")
 
-export GOPATH=$(shell pwd)/gopath
 export CGO_ENABLED:=0
 
 .PHONY: all
 all: bin/ct
-
-gopath:
-	$(Q)mkdir -p gopath/src/github.com/coreos
-	$(Q)ln -s ../../../.. gopath/src/$(REPO)
 
 .PHONY: test
 test:
@@ -31,8 +26,7 @@ test:
 
 .PHONY: vendor
 vendor:
-	$(Q)glide update --strip-vendor
-	$(Q)glide-vc --use-lock-file --no-tests --only-code
+	$(Q)go mod vendor
 
 .PHONY: clean
 clean:
@@ -57,5 +51,5 @@ bin/ct-%-x86_64-unknown-linux-gnu: GOARGS = GOOS=linux GOARCH=amd64
 bin/ct-%-x86_64-apple-darwin: GOARGS = GOOS=darwin GOARCH=amd64
 bin/ct-%-x86_64-pc-windows-gnu.exe: GOARGS = GOOS=windows GOARCH=amd64
 
-bin/%: $(GO_SOURCES) | gopath
-	$(Q)$(GOARGS) go build -o $@ -ldflags $(LD_FLAGS) $(REPO)/internal
+bin/%: $(GO_SOURCES)
+	$(Q)$(GOARGS) go build -mod vendor -o $@ -ldflags $(LD_FLAGS) $(REPO)/internal
