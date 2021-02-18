@@ -1,6 +1,6 @@
 FROM golang:alpine
 ENV CGO_ENABLED=0
-WORKDIR $GOPATH/src/github.com/flatcar-linux/container-linux-config-transpiler
+WORKDIR $GOPATH/src/github.com/kinvolk/container-linux-config-transpiler
 COPY . .
 RUN apk update && apk add --virtual .build-deps bash git make \
     && make \

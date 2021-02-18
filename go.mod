@@ -1,4 +1,4 @@
-module github.com/flatcar-linux/container-linux-config-transpiler
+module github.com/kinvolk/container-linux-config-transpiler
 
 go 1.16
 

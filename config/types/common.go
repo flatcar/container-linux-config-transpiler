@@ -23,10 +23,10 @@ import (
 	"github.com/coreos/ignition/config/validate/astnode"
 	"github.com/coreos/ignition/config/validate/report"
 
-	"github.com/flatcar-linux/container-linux-config-transpiler/config/platform"
-	"github.com/flatcar-linux/container-linux-config-transpiler/config/templating"
-	"github.com/flatcar-linux/container-linux-config-transpiler/config/types/util"
-	iutil "github.com/flatcar-linux/container-linux-config-transpiler/internal/util"
+	"github.com/kinvolk/container-linux-config-transpiler/config/platform"
+	"github.com/kinvolk/container-linux-config-transpiler/config/templating"
+	"github.com/kinvolk/container-linux-config-transpiler/config/types/util"
+	iutil "github.com/kinvolk/container-linux-config-transpiler/internal/util"
 )
 
 var (

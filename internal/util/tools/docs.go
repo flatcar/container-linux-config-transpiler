@@ -25,7 +25,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/flatcar-linux/container-linux-config-transpiler/config"
+	"github.com/kinvolk/container-linux-config-transpiler/config"
 )
 
 const (
