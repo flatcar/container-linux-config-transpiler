@@ -10,7 +10,7 @@ else
 endif
 
 VERSION=$(shell git describe --dirty)
-REPO=github.com/flatcar-linux/container-linux-config-transpiler
+REPO=github.com/kinvolk/container-linux-config-transpiler
 LD_FLAGS="-w -X $(REPO)/internal/version.Raw=$(VERSION)"
 
 GO_SOURCES=$(shell find . -name "*.go")

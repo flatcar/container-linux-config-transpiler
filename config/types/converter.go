@@ -22,7 +22,7 @@ import (
 	"github.com/coreos/ignition/config/validate/astnode"
 	"github.com/coreos/ignition/config/validate/report"
 
-	"github.com/flatcar-linux/container-linux-config-transpiler/config/astyaml"
+	"github.com/kinvolk/container-linux-config-transpiler/config/astyaml"
 )
 
 type converter func(in Config, ast astnode.AstNode, out ignTypes.Config, platform string) (ignTypes.Config, report.Report, astnode.AstNode)
