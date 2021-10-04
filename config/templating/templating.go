@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kinvolk/container-linux-config-transpiler/config/platform"
+	"github.com/flatcar-linux/container-linux-config-transpiler/config/platform"
 )
 
 var (

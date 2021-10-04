@@ -20,7 +20,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/kinvolk/container-linux-config-transpiler/internal/util"
+	"github.com/flatcar-linux/container-linux-config-transpiler/internal/util"
 
 	ignTypes "github.com/coreos/ignition/config/v2_3/types"
 	"github.com/coreos/ignition/config/validate/astnode"
