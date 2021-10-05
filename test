@@ -2,7 +2,7 @@
 
 set -eu
 
-ORG_PATH="github.com/kinvolk"
+ORG_PATH="github.com/flatcar-linux"
 REPO_PATH="${ORG_PATH}/container-linux-config-transpiler"
 
 if [ ! -h gopath/src/${REPO_PATH} ]; then

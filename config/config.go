@@ -23,9 +23,9 @@ import (
 	"github.com/coreos/ignition/config/validate/astnode"
 	"github.com/coreos/ignition/config/validate/report"
 
-	"github.com/kinvolk/container-linux-config-transpiler/config/astyaml"
-	"github.com/kinvolk/container-linux-config-transpiler/config/platform"
-	"github.com/kinvolk/container-linux-config-transpiler/config/types"
+	"github.com/flatcar-linux/container-linux-config-transpiler/config/astyaml"
+	"github.com/flatcar-linux/container-linux-config-transpiler/config/platform"
+	"github.com/flatcar-linux/container-linux-config-transpiler/config/types"
 )
 
 // Parse will convert a byte slice containing a Container Linux Config into a
