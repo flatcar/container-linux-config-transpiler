@@ -1,9 +1,6 @@
 # github.com/ajeddeloh/go-json v0.0.0-20200220154158-5ae607161559
 ## explicit
 github.com/ajeddeloh/go-json
-# github.com/ajeddeloh/yaml v0.0.0-20170912190910-6b94386aeefd
-## explicit
-github.com/ajeddeloh/yaml
 # github.com/alecthomas/units v0.0.0-20210208195552-ff826a37aa15
 ## explicit
 github.com/alecthomas/units
@@ -38,3 +35,6 @@ github.com/vincent-petithory/dataurl
 go4.org/errorutil
 # gopkg.in/yaml.v2 v2.2.2
 gopkg.in/yaml.v2
+# gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
+## explicit
+gopkg.in/yaml.v3
