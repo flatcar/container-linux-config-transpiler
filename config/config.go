@@ -17,11 +17,11 @@ package config
 import (
 	"reflect"
 
-	yaml "github.com/ajeddeloh/yaml"
 	ignTypes "github.com/coreos/ignition/config/v2_3/types"
 	"github.com/coreos/ignition/config/validate"
 	"github.com/coreos/ignition/config/validate/astnode"
 	"github.com/coreos/ignition/config/validate/report"
+	yaml "gopkg.in/yaml.v3"
 
 	"github.com/flatcar-linux/container-linux-config-transpiler/config/astyaml"
 	"github.com/flatcar-linux/container-linux-config-transpiler/config/platform"
@@ -32,16 +32,21 @@ import (
 // golang struct representing the config, the parse tree from parsing the yaml
 // and a report of any warnings or errors that occurred during the parsing.
 func Parse(data []byte) (types.Config, astnode.AstNode, report.Report) {
-	var cfg types.Config
-	var r report.Report
+	var docNode yaml.Node
 
-	if err := yaml.Unmarshal(data, &cfg); err != nil {
+	if err := yaml.Unmarshal(data, &docNode); err != nil {
 		return types.Config{}, nil, report.ReportFromError(err, report.EntryError)
 	}
 
-	nodes := yaml.UnmarshalToNode(data)
+	var cfg types.Config
+
+	if err := docNode.Decode(&cfg); err != nil {
+		return types.Config{}, nil, report.ReportFromError(err, report.EntryError)
+	}
+
 	var root astnode.AstNode
-	if nodes == nil {
+	var r report.Report
+	if docNode.IsZero() {
 		r.Add(report.Entry{
 			Kind:    report.EntryWarning,
 			Message: "Configuration is empty",
@@ -49,7 +54,7 @@ func Parse(data []byte) (types.Config, astnode.AstNode, report.Report) {
 		r.Merge(validate.ValidateWithoutSource(reflect.ValueOf(cfg)))
 	} else {
 		var err error
-		root, err = astyaml.FromYamlDocumentNode(*nodes)
+		root, err = astyaml.FromYamlDocumentNode(docNode)
 		if err != nil {
 			return types.Config{}, nil, report.ReportFromError(err, report.EntryError)
 		}

@@ -19,8 +19,8 @@ import (
 	"io"
 	"strings"
 
-	yaml "github.com/ajeddeloh/yaml"
 	"github.com/coreos/ignition/config/validate/astnode"
+	yaml "gopkg.in/yaml.v3"
 )
 
 var (
@@ -43,16 +43,16 @@ func FromYamlDocumentNode(n yaml.Node) (YamlNode, error) {
 	return YamlNode{
 		key:  n,
 		tag:  "yaml",
-		Node: *n.Children[0],
+		Node: *n.Content[0],
 	}, nil
 }
 
 func (n YamlNode) ValueLineCol(source io.ReadSeeker) (int, int, string) {
-	return n.Line + 1, n.Column + 1, ""
+	return n.Line, n.Column, ""
 }
 
 func (n YamlNode) KeyLineCol(source io.ReadSeeker) (int, int, string) {
-	return n.key.Line + 1, n.key.Column + 1, ""
+	return n.key.Line, n.key.Column, ""
 }
 
 func (n YamlNode) LiteralValue() interface{} {
@@ -63,14 +63,14 @@ func (n YamlNode) SliceChild(index int) (astnode.AstNode, bool) {
 	if n.Kind != yaml.SequenceNode {
 		return nil, false
 	}
-	if index >= len(n.Children) {
+	if index >= len(n.Content) {
 		return nil, false
 	}
 
 	return YamlNode{
 		key:  yaml.Node{},
 		tag:  n.tag,
-		Node: *n.Children[index],
+		Node: *n.Content[index],
 	}, true
 }
 
@@ -80,12 +80,12 @@ func (n YamlNode) KeyValueMap() (map[string]astnode.AstNode, bool) {
 	}
 
 	kvmap := map[string]astnode.AstNode{}
-	for i := 0; i < len(n.Children); i += 2 {
-		key := *n.Children[i]
+	for i := 0; i < len(n.Content); i += 2 {
+		key := *n.Content[i]
 		if n.tag == "json" {
 			key.Value = getIgnKeyName(key.Value)
 		}
-		value := *n.Children[i+1]
+		value := *n.Content[i+1]
 		kvmap[key.Value] = YamlNode{
 			key:  key,
 			tag:  n.tag,
@@ -101,12 +101,12 @@ func (n *YamlNode) ChangeKey(oldKeyName, newKeyName string, newValue YamlNode) e
 	if n.Kind != yaml.MappingNode {
 		return ErrNotMappingNode
 	}
-	for i := 0; i < len(n.Children); i += 2 {
-		key := n.Children[i]
+	for i := 0; i < len(n.Content); i += 2 {
+		key := n.Content[i]
 		if key.Value == oldKeyName {
 			//key.Value = newKeyName
-			(*n.Children[i]).Value = newKeyName
-			*n.Children[i+1] = newValue.Node
+			(*n.Content[i]).Value = newKeyName
+			*n.Content[i+1] = newValue.Node
 			return nil
 		}
 	}
