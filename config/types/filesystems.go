@@ -15,9 +15,9 @@
 package types
 
 import (
-	ignTypes "github.com/coreos/ignition/config/v2_3/types"
-	"github.com/coreos/ignition/config/validate/astnode"
-	"github.com/coreos/ignition/config/validate/report"
+	ignTypes "github.com/flatcar-linux/ignition/config/v2_3/types"
+	"github.com/flatcar-linux/ignition/config/validate/astnode"
+	"github.com/flatcar-linux/ignition/config/validate/report"
 )
 
 type Filesystem struct {

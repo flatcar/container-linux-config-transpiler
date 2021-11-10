@@ -19,7 +19,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/coreos/ignition/config/validate/astnode"
+	"github.com/flatcar-linux/ignition/config/validate/astnode"
 	yaml "gopkg.in/yaml.v3"
 )
 
