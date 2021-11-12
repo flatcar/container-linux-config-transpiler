@@ -7,7 +7,7 @@ The Container Linux Config is intended to be human-friendly, and is thus in YAML
 The resulting Ignition config is very much not intended to be human-friendly. It is an artifact produced by ct that users should simply pass along to their machines. JSON was chosen over a binary format to make the process more transparent and to allow power users to inspect/modify what ct produces, but it would have worked fine if the result from ct had not been human readable at all.
 
 [ct]: https://github.com/flatcar-linux/container-linux-config-transpiler/
-[ignition]: https://github.com/coreos/ignition
+[ignition]: https://github.com/flatcar-linux/ignition
 
 ## Why a two-step process?
 

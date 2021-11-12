@@ -14,7 +14,7 @@ For a more in-depth view of ct and why it exists, take a look at the [Overview][
 
 Please use the [bug tracker][issues] to report bugs.
 
-[ignition]: https://github.com/coreos/ignition
+[ignition]: https://github.com/flatcar-linux/ignition
 [issues]: https://github.com/flatcar-linux/flatcar/issues
 [overview]: doc/overview.md
 [get-started]: doc/getting-started.md
@@ -90,6 +90,6 @@ Note: Review releases for new branch versions.
 
 ## Related projects
 
-- [https://github.com/coreos/ignition](https://github.com/coreos/ignition)
+- [https://github.com/flatcar-linux/ignition](https://github.com/flatcar-linux/ignition)
 - [https://github.com/flatcar-linux/afterburn/](https://github.com/flatcar-linux/afterburn)
 - [https://github.com/poseidon/matchbox](https://github.com/poseidon/matchbox)
