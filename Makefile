@@ -34,7 +34,8 @@ clean:
 
 .PHONY: release_aarch64
 release_aarch64 := \
-	bin/ct-$(VERSION)-aarch64-unknown-linux-gnu
+	bin/ct-$(VERSION)-aarch64-unknown-linux-gnu \
+	bin/ct-$(VERSION)-aarch64-apple-darwin
 
 .PHONY: release_x86_64
 release_x86_64 := \
@@ -46,6 +47,7 @@ release_x86_64 := \
 release: $(release_aarch64) $(release_x86_64)
 
 bin/ct-%-aarch64-unknown-linux-gnu: GOARGS = GOOS=linux GOARCH=arm64
+bin/ct-%-aarch64-apple-darwin: GOARGS = GOOS=darwin GOARCH=arm64
 
 bin/ct-%-x86_64-unknown-linux-gnu: GOARGS = GOOS=linux GOARCH=amd64
 bin/ct-%-x86_64-apple-darwin: GOARGS = GOOS=darwin GOARCH=amd64
