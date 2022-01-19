@@ -130,19 +130,6 @@ func (fc FileContents) Validate() report.Report {
 	return report.Report{}
 }
 
-func makeDataUrl(contents []byte) string {
-	opaque := "," + dataurl.Escape(contents)
-	b64 := ";base64," + base64.StdEncoding.EncodeToString(contents)
-	if len(b64) < len(opaque) {
-		opaque = b64
-	}
-	uri := (&url.URL{
-		Scheme: "data",
-		Opaque: opaque,
-	}).String()
-	return uri
-}
-
 func init() {
 	register(func(in Config, ast astnode.AstNode, out ignTypes.Config, platform string) (ignTypes.Config, report.Report, astnode.AstNode) {
 		r := report.Report{}
@@ -320,4 +307,15 @@ func init() {
 		}
 		return out, r, ast
 	})
+}
+
+func makeDataUrl(contents []byte) string {
+	opaque := "," + dataurl.Escape(contents)
+	if b64 := ";base64," + base64.StdEncoding.EncodeToString(contents); len(b64) < len(opaque) {
+		opaque = b64
+	}
+	return (&url.URL{
+		Scheme: "data",
+		Opaque: opaque,
+	}).String()
 }
