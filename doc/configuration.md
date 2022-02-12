@@ -160,6 +160,10 @@ _Note: all fields are optional unless otherwise marked_
 * **update**
     * **group** (string): the update group to follow. Most users will want one of: stable, beta, alpha.
     * **server** (string): the server to fetch updates from.
+    * **pcr_policy_server** (string): the server to receive posted TPM PCR policy from.
+    * **download_user** (string): the authentication user to fetch the update.
+    * **download_password** (string): the authentication password to fetch the update
+    * **machine_alias** (string): human readable machine alias to be displayed in the update server UI.
 * **locksmith**
     * **reboot_strategy** (string): the reboot strategy for locksmithd to follow. Must be one of: reboot, etcd-lock, off.
     * **window_start** (string, required if window-length isn't empty): the start of the window that locksmithd can reboot the machine during

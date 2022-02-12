@@ -33,12 +33,20 @@ var (
 )
 
 type Update struct {
-	Group  UpdateGroup  `yaml:"group"`
-	Server UpdateServer `yaml:"server"`
+	Group            UpdateGroup            `yaml:"group"`
+	Server           UpdateServer           `yaml:"server"`
+	PCRPolicyServer  UpdatePCRPolicyServer  `yaml:"pcr_policy_server"`
+	DownloadUser     UpdateDownloadUser     `yaml:"download_user"`
+	DownloadPassword UpdateDownloadPassword `yaml:"download_password"`
+	MachineAlias     UpdateMachineAlias     `yaml:"machine_alias"`
 }
 
 type UpdateGroup string
 type UpdateServer string
+type UpdatePCRPolicyServer string
+type UpdateDownloadUser string
+type UpdateDownloadPassword string
+type UpdateMachineAlias string
 
 func (u Update) Validate() report.Report {
 	switch strings.ToLower(string(u.Group)) {
@@ -69,6 +77,18 @@ func init() {
 			}
 			if in.Update.Server != "" {
 				contents += fmt.Sprintf("\nSERVER=%s", in.Update.Server)
+			}
+			if in.Update.PCRPolicyServer != "" {
+				contents += fmt.Sprintf("\nPCR_POLICY_SERVER=%s", in.Update.PCRPolicyServer)
+			}
+			if in.Update.DownloadUser != "" {
+				contents += fmt.Sprintf("\nDOWNLOAD_USER=%s", in.Update.DownloadUser)
+			}
+			if in.Update.DownloadPassword != "" {
+				contents += fmt.Sprintf("\nDOWNLOAD_PASSWORD=%s", in.Update.DownloadPassword)
+			}
+			if in.Update.MachineAlias != "" {
+				contents += fmt.Sprintf("\nMACHINE_ALIAS=%s", in.Update.MachineAlias)
 			}
 		}
 		if in.Locksmith != nil {
