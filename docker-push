@@ -2,6 +2,5 @@
 
 set -e
 VERSION=$(git describe)
-docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" quay.io
-docker push quay.io/coreos/ct:$VERSION
-docker push quay.io/coreos/ct:latest-dev
+docker push ghcr.io/flatcar-linux/ct:$VERSION
+docker push ghcr.io/flatcar-linux/ct:latest-dev

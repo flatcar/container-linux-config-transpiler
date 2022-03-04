@@ -5,8 +5,9 @@ COPY . .
 RUN apk update && apk add --virtual .build-deps bash git make \
     && make \
     && mv bin/ct /usr/bin/ \
-    && mv Dockerfile.build-alpine /tmp \
     && rm -rf $GOPATH \
     && apk del .build-deps && rm -rf /var/cache/apk
-WORKDIR /tmp
-ENTRYPOINT ["/usr/bin/ct"]
+
+FROM scratch
+COPY --from=0 /usr/bin/ct /ct
+ENTRYPOINT ["/ct"]
