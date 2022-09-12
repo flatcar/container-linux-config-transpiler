@@ -6,9 +6,9 @@ import (
 	"fmt"
 
 	"github.com/coreos/go-semver/semver"
-	ignTypes "github.com/flatcar-linux/ignition/config/v2_3/types"
-	"github.com/flatcar-linux/ignition/config/validate/astnode"
-	"github.com/flatcar-linux/ignition/config/validate/report"
+	ignTypes "github.com/flatcar/ignition/config/v2_3/types"
+	"github.com/flatcar/ignition/config/validate/astnode"
+	"github.com/flatcar/ignition/config/validate/report"
 )
 
 var (

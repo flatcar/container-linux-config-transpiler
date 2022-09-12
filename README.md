@@ -14,8 +14,8 @@ For a more in-depth view of ct and why it exists, take a look at the [Overview][
 
 Please use the [bug tracker][issues] to report bugs.
 
-[ignition]: https://github.com/flatcar-linux/ignition
-[issues]: https://github.com/flatcar-linux/flatcar/issues
+[ignition]: https://github.com/flatcar/ignition
+[issues]: https://github.com/flatcar/flatcar/issues
 [overview]: doc/overview.md
 [get-started]: doc/getting-started.md
 [config]: doc/configuration.md
@@ -54,7 +54,7 @@ ARCH=x86_64
 OS=unknown-linux-gnu # Linux
 
 # Specify download URL
-DOWNLOAD_URL=https://github.com/flatcar-linux/container-linux-config-transpiler/releases/download
+DOWNLOAD_URL=https://github.com/flatcar/container-linux-config-transpiler/releases/download
 
 # Remove previous downloads
 rm -f /tmp/ct-${CT_VER}-${ARCH}-${OS} /tmp/ct-${CT_VER}-${ARCH}-${OS}.asc /tmp/coreos-app-signing-pubkey.gpg
@@ -72,14 +72,14 @@ curl -L ${DOWNLOAD_URL}/${CT_VER}/ct-${CT_VER}-${ARCH}-${OS}.asc -o /tmp/ct-${CT
 gpg2 --verify /tmp/ct-${CT_VER}-${ARCH}-${OS}.asc /tmp/ct-${CT_VER}-${ARCH}-${OS}
 ```
 
-[releases]: https://github.com/flatcar-linux/container-linux-config-transpiler/releases
+[releases]: https://github.com/flatcar/container-linux-config-transpiler/releases
 
 ### Building from source
 
 To build from source you'll need to have the go compiler installed on your system.
 
 ```shell
-git clone --branch v0.8.0 https://github.com/flatcar-linux/container-linux-config-transpiler
+git clone --branch v0.8.0 https://github.com/flatcar/container-linux-config-transpiler
 cd container-linux-config-transpiler
 make
 ```
@@ -90,6 +90,6 @@ Note: Review releases for new branch versions.
 
 ## Related projects
 
-- [https://github.com/flatcar-linux/ignition](https://github.com/flatcar-linux/ignition)
-- [https://github.com/flatcar-linux/afterburn/](https://github.com/flatcar-linux/afterburn)
+- [https://github.com/flatcar/ignition](https://github.com/flatcar/ignition)
+- [https://github.com/flatcar/afterburn/](https://github.com/flatcar/afterburn)
 - [https://github.com/poseidon/matchbox](https://github.com/poseidon/matchbox)

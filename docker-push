@@ -2,5 +2,5 @@
 
 set -e
 VERSION=$(git describe)
-docker push ghcr.io/flatcar-linux/ct:$VERSION
-docker push ghcr.io/flatcar-linux/ct:latest-dev
+docker push ghcr.io/flatcar/ct:$VERSION
+docker push ghcr.io/flatcar/ct:latest-dev

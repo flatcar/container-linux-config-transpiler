@@ -17,12 +17,12 @@ package types
 import (
 	"reflect"
 
-	ignTypes "github.com/flatcar-linux/ignition/config/v2_3/types"
-	"github.com/flatcar-linux/ignition/config/validate"
-	"github.com/flatcar-linux/ignition/config/validate/astnode"
-	"github.com/flatcar-linux/ignition/config/validate/report"
+	ignTypes "github.com/flatcar/ignition/config/v2_3/types"
+	"github.com/flatcar/ignition/config/validate"
+	"github.com/flatcar/ignition/config/validate/astnode"
+	"github.com/flatcar/ignition/config/validate/report"
 
-	"github.com/flatcar-linux/container-linux-config-transpiler/config/astyaml"
+	"github.com/flatcar/container-linux-config-transpiler/config/astyaml"
 )
 
 type converter func(in Config, ast astnode.AstNode, out ignTypes.Config, platform string) (ignTypes.Config, report.Report, astnode.AstNode)
