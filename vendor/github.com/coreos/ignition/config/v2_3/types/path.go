@@ -1,4 +1,4 @@
-// Copyright 2017 CoreOS, Inc.
+// Copyright 2016 CoreOS, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,23 +15,14 @@
 package types
 
 import (
-	"github.com/flatcar-linux/ignition/config/shared/errors"
-	"github.com/flatcar-linux/ignition/config/validate/report"
+	"path"
+
+	"github.com/coreos/ignition/config/shared/errors"
 )
 
-func (d Directory) ValidateMode() report.Report {
-	r := report.Report{}
-	if err := validateMode(d.Mode); err != nil {
-		r.Add(report.Entry{
-			Message: err.Error(),
-			Kind:    report.EntryError,
-		})
+func validatePath(p string) error {
+	if !path.IsAbs(p) {
+		return errors.ErrPathRelative
 	}
-	if d.Mode == nil {
-		r.Add(report.Entry{
-			Message: errors.ErrPermissionsUnset.Error(),
-			Kind:    report.EntryWarning,
-		})
-	}
-	return r
+	return nil
 }

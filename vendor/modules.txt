@@ -10,18 +10,20 @@ github.com/coreos/go-semver/semver
 # github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf
 ## explicit
 github.com/coreos/go-systemd/unit
+# github.com/coreos/ignition v0.35.1-0.20200810215700-4db553d21ad7
+## explicit
+github.com/coreos/ignition/config/shared/errors
+github.com/coreos/ignition/config/shared/validations
+github.com/coreos/ignition/config/v2_3/types
+github.com/coreos/ignition/config/validate
+github.com/coreos/ignition/config/validate/astjson
+github.com/coreos/ignition/config/validate/astnode
+github.com/coreos/ignition/config/validate/report
 # github.com/davecgh/go-spew v1.1.1
 ## explicit
 github.com/davecgh/go-spew/spew
 # github.com/flatcar-linux/ignition v0.36.1
 ## explicit
-github.com/flatcar-linux/ignition/config/shared/errors
-github.com/flatcar-linux/ignition/config/shared/validations
-github.com/flatcar-linux/ignition/config/v2_3/types
-github.com/flatcar-linux/ignition/config/validate
-github.com/flatcar-linux/ignition/config/validate/astjson
-github.com/flatcar-linux/ignition/config/validate/astnode
-github.com/flatcar-linux/ignition/config/validate/report
 # github.com/pmezard/go-difflib v1.0.0
 github.com/pmezard/go-difflib/difflib
 # github.com/stretchr/testify v1.7.0
