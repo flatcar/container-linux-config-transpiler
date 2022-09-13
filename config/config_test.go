@@ -22,8 +22,8 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/coreos/go-semver/semver"
-	ignTypes "github.com/flatcar-linux/ignition/config/v2_3/types"
-	"github.com/flatcar-linux/ignition/config/validate/report"
+	ignTypes "github.com/coreos/ignition/config/v2_3/types"
+	"github.com/coreos/ignition/config/validate/report"
 
 	"github.com/flatcar-linux/container-linux-config-transpiler/config/types"
 	"github.com/flatcar-linux/container-linux-config-transpiler/internal/util"

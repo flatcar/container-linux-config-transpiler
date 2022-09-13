@@ -18,7 +18,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/flatcar-linux/ignition/config/validate/report"
+	"github.com/coreos/ignition/config/validate/report"
 )
 
 func TestValidateUpdateGroup(t *testing.T) {
