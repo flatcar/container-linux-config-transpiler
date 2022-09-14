@@ -18,7 +18,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/flatcar-linux/ignition/config/validate/report"
+	"github.com/flatcar/ignition/config/validate/report"
 )
 
 func TestValidateWindowStart(t *testing.T) {

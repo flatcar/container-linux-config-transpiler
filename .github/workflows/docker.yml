@@ -5,7 +5,7 @@ on:
     - v*
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: flatcar-linux/ct
+  IMAGE_NAME: flatcar/ct
 
 jobs:
   docker:

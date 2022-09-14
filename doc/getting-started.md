@@ -34,4 +34,4 @@ To see some examples for what else ct can do, head over to the [examples][3].
 [1]: configuration.md
 [2]: https://coreos.com/ignition/docs/latest/supported-platforms.html
 [3]: examples.md
-[4]: https://github.com/flatcar-linux/container-linux-config-transpiler/releases
+[4]: https://github.com/flatcar/container-linux-config-transpiler/releases

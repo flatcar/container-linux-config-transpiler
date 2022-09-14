@@ -13,15 +13,15 @@ github.com/coreos/go-systemd/unit
 # github.com/davecgh/go-spew v1.1.1
 ## explicit
 github.com/davecgh/go-spew/spew
-# github.com/flatcar-linux/ignition v0.36.1
+# github.com/flatcar/ignition v0.36.2
 ## explicit
-github.com/flatcar-linux/ignition/config/shared/errors
-github.com/flatcar-linux/ignition/config/shared/validations
-github.com/flatcar-linux/ignition/config/v2_3/types
-github.com/flatcar-linux/ignition/config/validate
-github.com/flatcar-linux/ignition/config/validate/astjson
-github.com/flatcar-linux/ignition/config/validate/astnode
-github.com/flatcar-linux/ignition/config/validate/report
+github.com/flatcar/ignition/config/shared/errors
+github.com/flatcar/ignition/config/shared/validations
+github.com/flatcar/ignition/config/v2_3/types
+github.com/flatcar/ignition/config/validate
+github.com/flatcar/ignition/config/validate/astjson
+github.com/flatcar/ignition/config/validate/astnode
+github.com/flatcar/ignition/config/validate/report
 # github.com/pmezard/go-difflib v1.0.0
 github.com/pmezard/go-difflib/difflib
 # github.com/stretchr/testify v1.7.0

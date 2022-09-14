@@ -20,7 +20,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/flatcar-linux/ignition/config/validate/report"
+	"github.com/flatcar/ignition/config/validate/report"
 )
 
 var (
