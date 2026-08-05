@@ -28,7 +28,7 @@ passwd:
         - key3
 ```
 
-This example will create two users, `user1` and `user2`. The first user has a password set and two ssh public keys authorized to log in as the user. The second user doesn't have a password set (so log in via password will be disabled), but have one ssh key.
+This example will create two users, `user1` and `user2`. The first user has a password set and two ssh public keys authorized to log in as the user. The second user doesn't have a password set (so log in via password will be disabled), but has one ssh key.
 
 ```yaml
 passwd:
@@ -55,7 +55,7 @@ If you choose to use a password instead of an SSH key, generating a safe hash is
 # On Debian/Ubuntu (via the package "whois")
 mkpasswd --method=SHA-512 --rounds=4096
 
-# OpenSSL (note: this will only make md5crypt.  While better than plantext it should not be considered fully secure)
+# OpenSSL (note: this will only make md5crypt.  While better than plaintext it should not be considered fully secure)
 openssl passwd -1
 
 # Python
