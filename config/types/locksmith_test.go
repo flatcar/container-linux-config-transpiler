@@ -60,3 +60,28 @@ func TestValidateWindowStart(t *testing.T) {
 		}
 	}
 }
+
+func TestValidateRebootStrategy(t *testing.T) {
+	type in struct {
+		rebootStrategy string
+	}
+	type out struct {
+		r report.Report
+	}
+	tests := []struct {
+		in  in
+		out out
+	}{
+		{in{"reboot"}, out{report.Report{}}},
+		{in{"etcd-lock"}, out{report.Report{}}},
+		{in{"off"}, out{report.Report{}}},
+		{in{"in"}, out{report.ReportFromError(ErrUnknownStrategy, report.EntryError)}},
+	}
+
+	for i, test := range tests {
+		r := Locksmith{RebootStrategy: &test.in.rebootStrategy}.ValidateRebootStrategy()
+		if !reflect.DeepEqual(test.out.r, r) {
+			t.Errorf("#%d: wanted %v, got %v", i, test.out.r, r)
+		}
+	}
+}
